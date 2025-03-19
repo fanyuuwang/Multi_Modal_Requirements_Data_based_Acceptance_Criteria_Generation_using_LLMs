@@ -186,7 +186,7 @@ def do_rag(user_story, us_description, args):
         "BG": bg_labels,
         "Images": image_labels,
         "US": user_story,
-        "US_extension: us_description
+        "US_extension": us_description
     }
     return single_result
 
