@@ -163,6 +163,7 @@ def do_rag(user_story, us_description, args):
     """
     total_rag_results = []
     ground_knowledges = load_bg(args.bg_path)
+    images = 
     html = get_image_html(args.html_path)
     # TRAG with ICRALM
     ic_background = retrieval_with_icralm([user_story, us_description], [ground_knowledges], args.text_top_k)
