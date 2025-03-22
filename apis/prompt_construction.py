@@ -67,7 +67,6 @@ def urial_construction(us, use, bg, images):
         "User Story": "As an academic or a student, when I click on learning section tab to view learning sections I want to have a visual indicator to highlight the current week/ topic, so that I can quickly locate the most relevant content.",
         "User Story Extension": "The indicator will automatically update based on the current week functionality.",
         "Background Knowledge": "As an academic or a student, when I click on learning section tab to view learning sections I want to have a visual indicator to highlight the current week/ topic within the dropdown menu",
-        "Considering": "Please investigate options available to highlight the learning section (bold letters or using blue colour) see UI design screenshots. Note: (Current week functionality not required until teaching starts - Phase 2)",
         "Acceptance Criteria": {
             "ACriteria": [
                 {
@@ -88,9 +87,8 @@ Your task is to generate well-defined acceptance criteria from user stories.
 Each user story comes with additional details such as:
 - User Story Extension: Additional context for the feature.
 - Background Knowledge: Important information related to the user story.
-- Considering: Additional factors or constraints to take into account.
 
-Please note that, the user story and its extension should be primarily relied, but the background knowledge, considering and images may have some irrelevant information. You can make use of it if there are related information provided in the background knowledge, considering and images. 
+Please note that, the user story and its extension should be primarily relied, but the background knowledge and images may have some irrelevant information. You can make use of it if there are related information provided in the background knowledge and images. 
 
 In the acceptance criteria generation, you need to consider the following factors:
 - Relevance assesses how well the generated acceptance criteria aligns with the given information.
@@ -102,12 +100,11 @@ In the acceptance criteria generation, you need to consider the following factor
 The acceptance criteria should be structured in a Given-When-Then format and returned as a JSON object.
 Ensure clarity, completeness, and testability of each criterion."""
 
-    answer1 = "Please provide the user story along with any relevant extensions, background knowledge, and considerations. I’ll generate well-defined acceptance criteria in the Given-When-Then format and return them as a structured JSON object."
+    answer1 = "Please provide the user story along with any relevant extensions, background knowledge. I’ll generate well-defined acceptance criteria in the Given-When-Then format and return them as a structured JSON object."
 
     query1 = f"""User Story:\n{examples['User Story']}
             \nUser Story Extension:\n{examples['User Story Extension']}
             \nBackground Knowledge:\n{examples['Background Knowledge']}
-            \nConsidering:\n{examples['Considering']}"""
 
     answer2 = """"ACriteria": [
                     {
@@ -169,7 +166,7 @@ Instructions:
 	•	Avoid redundancy while ensuring comprehensive coverage.
 	•	Use precise language so that software developers and testers can implement and verify it easily.
 	•	Follow the given JSON format strictly to maintain consistency.
-	•	Please note that, the user story and its extension should be primarily relied, but the background knowledge, considering and images may have some irrelevant information. You can make use of it if there are related information provided in the background knowledge, considering and images.  
+	•	Please note that, the user story and its extension should be primarily relied, but the background knowledge and images may have some irrelevant information. You can make use of it if there are related information provided in the background knowledge and images.  
     
     Here is my given information:
 
@@ -205,7 +202,6 @@ def polish_urial_prompt_construction(user_story, user_story_extension, bg, image
         "User Story": "As an academic or a student, when I click on learning section tab to view learning sections I want to have a visual indicator to highlight the current week/ topic, so that I can quickly locate the most relevant content.",
         "User Story Extension": "The indicator will automatically update based on the current week functionality.",
         "Background Knowledge": "As an academic or a student, when I click on learning section tab to view learning sections I want to have a visual indicator to highlight the current week/ topic within the dropdown menu",
-        "Considering": "Please investigate options available to highlight the learning section (bold letters or using blue colour) see UI design screenshots. Note: (Current week functionality not required until teaching starts - Phase 2)",
         "Acceptance Criteria": {
             "ACriteria": [
                 {
@@ -226,9 +222,8 @@ def polish_urial_prompt_construction(user_story, user_story_extension, bg, image
     Each user story comes with additional details such as:
     - User Story Extension: Additional context for the feature.
     - Background Knowledge: Important information related to the user story.
-    - Considering: Additional factors or constraints to take into account.
 
-    Please note that, the user story and its extension should be primarily relied, but the background knowledge, considering and images may have some irrelevant information. You can make use of it if there are related information provided in the background knowledge, considering and images. 
+    Please note that, the user story and its extension should be primarily relied, but the background knowledge and images may have some irrelevant information. You can make use of it if there are related information provided in the background knowledge and images. 
 
     In the acceptance criteria generation, you need to consider the following factors:
     - Relevance assesses how well the generated acceptance criteria aligns with the given information.
@@ -240,7 +235,7 @@ def polish_urial_prompt_construction(user_story, user_story_extension, bg, image
     The acceptance criteria should be structured in a Given-When-Then format and returned as a JSON object.
     Ensure clarity, completeness, and testability of each criterion."""
 
-    answer1 = "Please provide the user story along with any relevant extensions, background knowledge, and considerations. I’ll generate well-defined acceptance criteria in the Given-When-Then format and return them as a structured JSON object."
+    answer1 = "Please provide the user story along with any relevant extensions, background knowledge. I’ll generate well-defined acceptance criteria in the Given-When-Then format and return them as a structured JSON object."
 
     query1 = f"""User Story:\n{examples['User Story']}
                 \nUser Story Extension:\n{examples['User Story Extension']}
@@ -366,7 +361,6 @@ def urial_ablation_construction(us, use, bg):
         "User Story": "As an academic or a student, when I click on learning section tab to view learning sections I want to have a visual indicator to highlight the current week/ topic, so that I can quickly locate the most relevant content.",
         "User Story Extension": "The indicator will automatically update based on the current week functionality.",
         "Background Knowledge": "As an academic or a student, when I click on learning section tab to view learning sections I want to have a visual indicator to highlight the current week/ topic within the dropdown menu",
-        "Considering": "Please investigate options available to highlight the learning section (bold letters or using blue colour) see UI design screenshots. Note: (Current week functionality not required until teaching starts - Phase 2)",
         "Acceptance Criteria": {
             "ACriteria": [
                 {
@@ -387,9 +381,8 @@ Your task is to generate well-defined acceptance criteria from user stories.
 Each user story comes with additional details such as:
 - User Story Extension: Additional context for the feature.
 - Background Knowledge: Important information related to the user story.
-- Considering: Additional factors or constraints to take into account.
 
-Please note that, the user story and its extension should be primarily relied, but the background knowledge, considering and images may have some irrelevant information. You can make use of it if there are related information provided in the background knowledge, considering and images. 
+Please note that, the user story and its extension should be primarily relied, but the background knowledge and images may have some irrelevant information. You can make use of it if there are related information provided in the background knowledge, considering and images. 
 
 In the acceptance criteria generation, you need to consider the following factors:
 - Relevance assesses how well the generated acceptance criteria aligns with the given information.
@@ -401,12 +394,11 @@ In the acceptance criteria generation, you need to consider the following factor
 The acceptance criteria should be structured in a Given-When-Then format and returned as a JSON object.
 Ensure clarity, completeness, and testability of each criterion."""
 
-    answer1 = "Please provide the user story along with any relevant extensions, background knowledge, and considerations. I’ll generate well-defined acceptance criteria in the Given-When-Then format and return them as a structured JSON object."
+    answer1 = "Please provide the user story along with any relevant extensions, background knowledge. I’ll generate well-defined acceptance criteria in the Given-When-Then format and return them as a structured JSON object."
 
     query1 = f"""User Story:\n{examples['User Story']}
             \nUser Story Extension:\n{examples['User Story Extension']}
             \nBackground Knowledge:\n{examples['Background Knowledge']}
-            \nConsidering:\n{examples['Considering']}"""
 
     answer2 = """"ACriteria": [
                     {
