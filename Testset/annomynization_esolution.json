@@ -1,0 +1,832 @@
+[
+    {
+        "ID": "REQ-001",
+        "User Story": [
+            "As an academic, when creating and editing a unit, I must be able to select content format from a list of pre-designed options, as well as select number of content sections from a list of pre-defined values to be displayed in the unit template",
+            "As an academic, when creating or editing a unit, I must be able to select the Learning section from a list of pre-designed options (example. Week, Topic, Module, Day), as well as select/edit number of week sections from a list of pre-defined values (eg. 1,2,12, etc) to be displayed in the unit template, so that I can quickly organise learning content based on unit teaching style."
+        ],
+        "User Story Extension": [],
+        "Background Knowledge": [],
+        "Considering": [
+            "(Default format is set to Week option) (as per UX design)"
+        ],
+        "acceptanceCriteria": [
+            {
+                "Given": "I am logged in as a user with a role that allows course creation",
+                "When": "I create a new unit selecting the Coursework Template as the format",
+                "Then": "I should then be able to Select from a *Learning section* dropdown: . Week  (default) . Topic  . Module  . Day."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation",
+                "When": "I create a new unit selecting the Coursework Template as the format",
+                "Then": "I should then be able to Select a value for the *Number of sections*  (via slider) from a list of pre-defined values (1 - 52). Week and Topic default to '12'. Module and Day default to '12'. All learning sections default to '12'."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation",
+                "When": "I create a new unit with Coursework Template and click 'Save and Display', then click on the Weekly Learning tab",
+                "Then": "I should see the same number of sections that I selected in the form (sequentially numbered from 1 to n). The sections should have the  following naming structure, depending on the selected Learning section: {*}Week{*}:  Week 1, Week 2 etc {*}Topic{*}:  Topic 1, Topic 2 etc {*}Module{*}:  Module 1, Module 2 etc {*}Day{*}:  Day 1, Day 2 etc"
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course editing",
+                "When": "I go to the settings screen for the course that has been created",
+                "Then": "I should see the course format with 'Coursework Template' selected and the *Learning section* drop down with the selected value as per when the course was created. The *Number of sections* is a read only value."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course editing",
+                "When": "I go to the settings screen for the course and change the *Learning section,* click 'Save and Display', then click on the Weekly Learning tab",
+                "Then": "I should see the same number of sections that were in read only. The section name format should have updated according to the following naming structure, depending on the selected Learning section: {*}Week{*}:  Week 1, Week 2 etc {*}Topic{*}:  Topic 1, Topic 2 etc {*}Module{*}:  Module 1, Module 2 etc {*}Day{*}:  Day 1, Day 2 etc"
+            }
+        ]
+    },
+    {
+        "ID": "REQ-002",
+        "User Story": [
+            "As an academic, I want the Learning section tab automatically titled based on the Learning section format selected (eg. Weekly Learning). Additionally the tab should display a number of specified learning sections/pages via a drop down menu.",
+            "Each learning section from the drop down menu must open the corresponding page for that week/topic learning section."
+        ],
+        "User Story Extension": [
+            "Drop down menu will display a list of sections specified by the academic (for example, if an academic has specified 12 Weekly sections, then the dropdown list will display 12 weekly learning sections)",
+            "Learning section Tab drop down menu will include following title for each section: Week/ Topic # and week/topic title (eg. Week 1 - Introduction to accounting, or Topic 1 - Topic title etc)."
+        ],
+        "Background Knowledge": [
+            "Titles to include: Weekly Learning, Topic Learning, Module Learning, Daily Learning"
+        ],
+        "Considering": [
+            "see UX design for Learning section tab drop down menu"
+        ],
+        "acceptanceCriteria": [
+            {
+                "Given": "I am logged in as a user with a role that allows course creation",
+                "When": "I create a new unit using the Coursework Template, then I select the learning section format (eg. Week), then I select the number of learning sections, and click 'Save and Display.",
+                "Then": "I should see the Learning section tab in the template automatically be titled 'Weekly Learning'."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation",
+                "WHEN": "I create a new unit using the Coursework Template, then I select the learning section format (eg. Week), then I select the number of learning sections, and click 'Save and Display.",
+                "THEN": "Learning Section Tab title should update depending on the selected Learning section format:: * if I select Week format > The Learning section tab in the template will be automatically titled 'Weekly Learning'"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation",
+                "WHEN": "I create a new unit using the Coursework Template, then I select the learning section format (eg. Week), then I select the number of learning sections, and click 'Save and Display.",
+                "THEN": "Learning Section Tab title should update depending on the selected Learning section format:: * if I select Topic format > The Learning section tab in the template will be automatically titled 'Topic Learning'"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation",
+                "WHEN": "I create a new unit using the Coursework Template, then I select the learning section format (eg. Week), then I select the number of learning sections, and click 'Save and Display, then click on Weekly Learning tab",
+                "THEN": "*I should see the same number of sections that I selected in the settings, displayed via drop down menu and sequentially numbered."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation",
+                "WHEN": "I create a new unit using the Coursework Template, then I select the learning section format (eg. Week), then I select the number of learning sections, and click 'Save and Display, then click on Weekly Learning tab",
+                "THEN": "The sections within the drop down menu should have the following naming structure depending on the selected Learning section format: ** Week: Week 1 - week/topic title (eg. Week 1 - 'Introduction to accounting'*"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation",
+                "WHEN": "I create a new unit using the Coursework Template, then I select the learning section format (eg. Week), then I select the number of learning sections, and click 'Save and Display, then click on Weekly Learning tab",
+                "THEN": "*The number of the section is a read only menu*"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation",
+                "WHEN": "I create a new unit using the Coursework Template, then I select the learning section format (eg. Week), then I select the number of learning sections, and click 'Save and Display, then click on Weekly Learning tab",
+                "THEN": "*'title' is empty and will automatically populate once the administrator manually populates section title in* the relevant learning section"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation",
+                "WHEN": "I create a new unit using the Coursework Template, then I select the learning section format (eg. Week), then I select the number of learning sections, and click 'Save and Display, then click on Weekly Learning tab",
+                "THEN": "The sections within the drop down menu should have the following naming structure depending on the selected Learning section format: ** Topic: Topic 1 - title ** Module: Module 1 - title ** Day: Day 1 - title etc."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation",
+                "When": "I select the learning section format (eg. Week), then I select the number of learning sections, and click 'Save and Display, then click on Weekly Learning tab",
+                "Then": "I can select a learning section from the Learning section Tab drop down menu and it will navigate me to the corresponding page for that learning section."
+            }
+        ]
+    },
+    {
+        "ID": "REQ-003",
+        "User Story": [
+            "As an academic, when editing learning content, I must have a visual indicator to identify current week based on current week format functionality, so that I can navigate quickly through learning sections and locate the current week."
+        ],
+        "User Story Extension": [
+            "Current week indicator should display in left hand menu and on the page."
+        ],
+        "Background Knowledge": [],
+        "Considering": [
+            "The indicator will automatically update based on the current week functionality"
+        ],
+        "acceptanceCriteria": [
+            {
+                "GIVEN": "I have required access and I created a new unit using the Coursework template, or I am editing a unit.\n\nRoles for creating a new unit: VLE Administrator, Administrator, OES Administrator.\nRoles for Editing Unit: VLE Administrator, Administrator, OES Administrator, Lecturer, Designer, Chief Examiner (refer to roles matrix).",
+                "WHEN": "I have editing enabled and I am in a Learning section.",
+                "THEN": "I can see a visual indicator identifying a 'Current Week' for any section where the current date falls between the start and end date for that section: The indicator will display on the Learning section page."
+            },
+            {
+                "GIVEN": "I have required access and I created a new unit using the Coursework template, or I am editing a unit.\n\nRoles for creating a new unit: VLE Administrator, Administrator, OES Administrator.\nRoles for Editing Unit: VLE Administrator, Administrator, OES Administrator, Lecturer, Designer, Chief Examiner (refer to roles matrix).",
+                "WHEN": "I have editing enabled and I am in a Learning section.",
+                "THEN": "I can see a visual indicator identifying a 'Current Week' for any section where the current date falls between the start and end date for that section: The indicator will display on the left-side navigation (see attachment for current learning system functionality)."
+            }
+        ]
+    },
+    {
+        "ID": "REQ-004",
+        "User Story": [
+            "As a student, I want a task count to appear blank (no task count and no wording) when there are no tracked tasks on the Task summary tracker card for both university Standard and Project templates."
+        ],
+        "User Story Extension": [
+            "Learning Journey Task summary tracker of completion to display task tracker cards for each following subsections: Own-time, Real-time, and Wrap-up.",
+            "Task Count - Number of tasks and wording will not be displayed when there are no tasks tracked",
+            "Progress bars will not be displayed when there are no tasks tracked",
+            "Grey / Green check (tick) completion marker will not display when there are no tasks tracked"
+        ],
+        "Background Knowledge": [
+            "Progress bars/markers for task completion are controlled by tasks completion based on completion criteria set by the academic in each Learning Journey sub sections (Completion tracking can be enabled manually or automatically: 'students to manually mark the activity as completed' or 'show activity as completed when conditions are met'",
+            "Task progress summary cards will only include tasks when 'Completion Tracking' is enabled for that activity/resource by the academic",
+            "icons and colours for Learning Journey Own-time / Real-time / Wrap-up subsections styled as per UI designs [Internal Requirement Reference]",
+            "another potential future non-linear template may not require Own-time/ Real-time/ Wrap-up headings within Learning Journey sub-section"
+        ],
+        "Considering": [
+            "The cards will also include an Information icon within each Task Tracker cards to be configured to display a text based message describing each subsections: 'click on or hover over' the information icon to read a text-based description of each subsections (own-time, real-time, wrap-up) (separate story) [Internal Requirement Reference]",
+            "Roles for creating a new unit: VLE Administrator, Administrator, OES Administrator",
+            "Roles for Editing Unit: VLE Administrator, Administrator, OES Administrator, Lecturer, Designer, Chief Examiner"
+        ],
+        "acceptanceCriteria": [
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course view, or course editing and creating and I am not in edit mode",
+                "WHEN": "I navigate to Your Learning Journey Task summary tracker card on the Learning page, and there are no tasks tracked - activities (with 'Activity Completion Tracking' enabled) under respective sub-section",
+                "THEN": "I should then be able to see: No task count - Blank (no wording) instead of Task count as there are no tasks tracked"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course view, or course editing and creating and I am not in edit mode",
+                "WHEN": "I navigate to Your Learning Journey Task summary tracker card on the Learning page, and there are no tasks tracked - activities (with 'Activity Completion Tracking' enabled) under respective sub-section",
+                "THEN": "I should then be able to see: No task progress bars as there are no tasks tracked"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course view, or course editing and creating and I am not in edit mode",
+                "WHEN": "I navigate to Your Learning Journey Task summary tracker card on the Learning page, and there are no tasks tracked - activities (with 'Activity Completion Tracking' enabled) under respective sub-section",
+                "THEN": "I should then be able to see: No grey / green check (tick) completion marker as there are no tasks tracked"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course view, course editing and creating, and I am not in edit mode",
+                "WHEN": "I am in a Learning section, and I go to Your Learning Journey Task summary tracker cards",
+                "THEN": "The task tracker will be a summary of the activities directly under relevant sub-section subsection. Activities with 'Activity Completion Tracking' enabled"
+            }
+        ]
+    },
+    {
+        "ID": "REQ-005",
+        "User Story": [
+            "As a student, the icon for learning capture on the unit information tab meets WCAG guidelines."
+        ],
+        "User Story Extension": [
+            "When a student accesses the 'Unit Information' tab within a unit created using the university Standard Template or the Project template, they should see an icon next to the 'Learning Capture' activity.",
+            "Students should also find a clear description for the 'Learning Capture' activity."
+        ],
+        "Background Knowledge": [
+            "Students need accessibility and clear visual cues to navigate the content within their unit.",
+            "This user story ensures that the icon representing 'Learning Capture' in the 'Unit Information' tab adheres to WCAG guidelines by having the correct colour contrast."
+        ],
+        "Considering": [
+            "This icon has been designed to meet WCAG guidelines, and be easily identifiable to students with vision impairments."
+        ],
+        "acceptanceCriteria": [
+            {
+                "GIVEN": "I am logged in to learning system as a student",
+                "WHEN": "I access the unit information tab in a unit that has been created with either the university Standard Template or the Project template.",
+                "THEN": "I can see an icon to the left of the Learning Capture activity as per the attached image."
+            },
+            {
+                "GIVEN": "I am logged in to learning system as a student",
+                "WHEN": "I access the unit information tab in a unit that has been created with either the university Standard Template or the Project template.",
+                "THEN": "I can see the following description under the Learning Capture heading: This contains the link to recordings of real-time classes"
+            }
+        ]
+    },
+    {
+        "ID": "REQ-006",
+        "User Story": [
+            "As a student, I want Learning section to provide following structure: Learning section title, Date, Learning section overview, Learning Journey Subsections for non-linear university Project template",
+            "As an academic or a student, I want Learning section to provide following structure as per UX design: Learning section title, Learning section date, Learning section overview widget / image / video, Learning Journey: Task progress cards, Ability to view and access activities and resources withing Learning Journey subsections"
+        ],
+        "User Story Extension": [
+            "Learning Journey should include Own-Time, Real-Time, Wrap-up with relevant Icons and colours as per UX designs",
+            "I can see any of the following three special sections \u2018unhidden\u2019 by the academic: Getting started, During the break, Additional information and resources"
+        ],
+        "Background Knowledge": [
+            "Roles for creating a new unit: VLE Administrator, Administrator, OES Administrator",
+            "Roles for Editing Unit: VLE Administrator, Administrator, OES Administrator, Lecturer, Designer, Chief Examiner"
+        ],
+        "Considering": [
+            "Task progress cards (September release)"
+        ],
+        "acceptanceCriteria": [
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I click on Learning section tab",
+                "THEN": "I should then be able to see: Learning section for the current week"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I hover over the Learning tab",
+                "THEN": "I can select a learning section from the Learning section Tab drop down menu and it will navigate me to the corresponding page for that learning section."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I hover over the Learning tab",
+                "THEN": "Any hidden items in the 'Learning' drop down should not be visible at all."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I am in a learning section tab",
+                "THEN": "I should then be able to see: Learning section title"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I am in a learning section tab",
+                "THEN": "I should then be able to see: Learning section date range (the date range will represent the start and end dates of the learning section)"
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course viewing",
+                "When": "I am in a learning section tab",
+                "Then": "Learning section overview content / image / video"
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course viewing",
+                "When": "I am in a learning section tab",
+                "Then": "I can see contact details of relevant learning section Educators"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I am in a learning section tab",
+                "THEN": "I should then be able to see: Learning journey subsections Own-time / Real-time / Wrap-up with icons and colours"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I am in a learning section tab",
+                "THEN": "I can collapse or expand the sub-sections"
+            },
+            {
+                "GIVEN": "I am in a learning section tab",
+                "WHEN": "I navigate to any of the Learning Journey sub-sections",
+                "THEN": "I should be then able to see and access: Resources (eg. panopto lecture videos, files, documents)"
+            },
+            {
+                "GIVEN": "I am in a learning section tab",
+                "WHEN": "I navigate to any of the Learning Journey sub-sections",
+                "THEN": "I can download individual learning material files from learning section"
+            },
+            {
+                "GIVEN": "I am in a learning section tab",
+                "WHEN": "I navigate to any of the Learning Journey sub-sections",
+                "THEN": "I should be then able to see and access: Activities (eg. Assessments, Forums, tutorials, quiz etc)"
+            },
+            {
+                "GIVEN": "I am in a learning section tab",
+                "WHEN": "I navigate to any of the Learning Journey sub-sections",
+                "THEN": "I want to be able to navigate between multiple lecture videos via a playlist using Panopto, as well as all videos to be embedded, enlarged, titled and described, to enhance my engagement and user experience."
+            },
+            {
+                "GIVEN": "I am in a learning section tab",
+                "WHEN": "I navigate to any of the Learning Journey sub-sections",
+                "THEN": "I can click on the forum link in the learning section, it will navigate to the individual Forum page"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I am in a learning section tab",
+                "THEN": "I should be able to see: Heading 'Your learning journey' for Task summary tracker cards"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I am in a learning section tab",
+                "THEN": "I can see 3 dynamic Learning Journey Task summary tracker cards for each sub-sections: Own-time, Real-time, Wrap-up with following structure."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I am in a learning section tab",
+                "THEN": "I can see icons and the colour for each Own-time, Real-time, Wrap-up"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I am in a learning section tab",
+                "THEN": "Task summary card format: Title of the sub-section, Icon for the sub-section, Information Icon"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I am in a learning section tab",
+                "THEN": "I can click on the Information icon on the tracker cards and see a message describing each subsections"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "I am in a learning section tab",
+                "THEN": "A dynamic Task summary tracker cards will display the progress of my Learning Journey tasks"
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course viewing",
+                "When": "I am in a learning section tab",
+                "Then": "*I can see any of the following three special sections \u2018unhidden\u2019 by the academic *Getting started* During the break *Additional information and resources*"
+            }
+        ]
+    },
+    {
+        "ID": "REQ-007",
+        "User Story": [
+            "As an academic, I must be able to see Schedule page configured when I click on the Schedule tab - university project template (non-linear) Schedule page configuration",
+            "Will contain a preconfigured schedule table with the following three columns: Learning section, Task, Additional Tasks",
+            "Table fields will all be free text / editable"
+        ],
+        "User Story Extension": [
+            "Ability to add/create and delete schedule widget sub-section (heading and table)",
+            "Schedule widget sub-section heading is editable (manually populate heading)",
+            "Schedule widget sub-section is collapsible",
+            "Ability to add multiple schedule sub-sections on the page"
+        ],
+        "Background Knowledge": [
+            "University project template (non-linear) Assessments page configuration"
+        ],
+        "Considering": [
+            "Ability to hide Schedule tab"
+        ],
+        "acceptanceCriteria": [
+            {
+                "Given": "I am logged in as a user with a role that allows course creation, course editing, and course view (refer to roles matrix).",
+                "When": "I navigate to the Schedule tab.",
+                "Then": "I should be able to hide the Schedule tab."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation, course editing, and course view.",
+                "When": "I navigate to the Schedule tab.",
+                "Then": "I should be able to view the Schedule widget/subsection with an editable heading 'title' by default:\n* I can manually populate title name for the subsection.\n* Subsection widget is collapsible."
+            },
+            {
+                "Given": "I navigate to the Schedule tab.",
+                "When": "I look at the subsection.",
+                "Then": "I should then be able to see a preconfigured table structure containing the following three column headings:\n\n* LEARNING SECTION\n* TASK\n* ADDITIONAL TASKS."
+            },
+            {
+                "GIVEN": "I navigate to the Schedule tab.",
+                "WHEN": "I navigate to and click on any of the following fields: LEARNING SECTION, TASK, or ADDITIONAL TASKS.",
+                "THEN": "These fields are free text fields: The text box will pop up to enable the user to edit text, as well as: Save via a save button, Cancel via a cancel button."
+            },
+            {   
+                "GIVEN": "I navigate to the Schedule tab.",
+                "WHEN": "I navigate to and click on any of the following fields: LEARNING SECTION, TASK, or ADDITIONAL TASKS.",
+                "THEN": "These fields are free text fields: I should not be able to upload images or videos."
+            },
+            {
+                "GIVEN": "I navigate to the Schedule tab.",
+                "WHEN": "I navigate to and click on any of the following fields: LEARNING SECTION, TASK, or ADDITIONAL TASKS.",
+                "THEN": "These fields are free text fields: I should see a visual indicator 'See more' button to indicate there is more text to be viewed (this button will only show if there is more than three lines of text)."
+            },
+            {
+                "GIVEN": "I navigate to the Schedule tab.",
+                "WHEN": "I navigate to and click on any of the following fields: LEARNING SECTION, TASK, or ADDITIONAL TASKS.",
+                "THEN": "These fields are free text fields: I should be able to see a pop-up modal window displaying all text for that additional details field."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation, course editing, and course view.",
+                "WHEN": "I navigate to the Schedule tab.",
+                "THEN": "I should be able to create multiple schedule sub-sections on the page."
+            }
+        ]
+    },
+    {
+        "ID": "REQ-008",
+        "User Story": [
+            "As a student, I must have the ability to view a summary of unit Announcements when I navigate to Forums Tab for existing units.",
+            "Announcements table will have a dedicated sub-section with a heading 'Announcements' which will be collapsible.",
+            "Forums tab will house and display Announcement forums and the data associated with the forum in a table including: title, description, number of discussions, number of unread posts and number of total posts.",
+            "There is a link to navigate to Announcements forum corresponding page to view discussions and posts."
+        ],
+        "User Story Extension": [
+            "Announcement (news) is automatically created when the unit is created.",
+            "Announcement Forums are clearly identified, and labelled as the forum where only academics can post announcements and news in it (sub-section)",
+            "FORUM: Auto populate and display Announcement forum title and link to the corresponding forum page itself",
+            "DESCRIPTION: Auto populate and display the description for the forum",
+            "DISCUSSIONS: This represents the number of discussions for this forum and it will be a link to the discussions on the individual forum page",
+            "UNREAD POSTS: This represents the number of unread posts for this forum and it will be a link to the relevant posts on the individual forum page"
+        ],
+        "Background Knowledge": [
+            "An upgrade script is required to enable the announcement forums going forward and also to re-enable announcement forums for existing format_mst units.",
+            "(see UI design)"
+        ],
+        "Considering": [
+            "Upgrade script to enable the announcement forums for existing units."
+        ],
+        "acceptanceCriteria": [
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation, course editing and course view and I am viewing an existing format_mst units.",
+                "WHEN": "I navigate to the Forums tab.",
+                "THEN": "I should see a sub-section with a title \u2018Announcements\u2019."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation, course editing and course view and I am viewing an existing format_mst units.",
+                "WHEN": "I navigate to the Forums tab.",
+                "THEN": "Announcements sub-section must be collapsible."
+            },
+            {
+                "GIVEN": "I navigate to the Forums tab",
+                "WHEN": "I click to expand the \u2018Announcements\u2019 sub-section.",
+                "THEN": "I should be able to view the Announcements table containing the following columns: \u2018Forum\u2019, \u2018Description\u2019, \u2018Discussions\u2019, \u2018Unread Posts\u2019."
+            },
+            {
+                "GIVEN": "I navigate to the Forums tab",
+                "WHEN": "I click to expand the \u2018Announcements\u2019 sub-section.",
+                "THEN": "Table column headings to be in CAPS."
+            },
+            {
+                "GIVEN": "I navigate to the Announcements table",
+                "WHEN": "I look at the \u2018Forum\u2019 column",
+                "THEN": "The row in this column must display the title of the Announcements forum (news). Announcements (news) is automatically created when the unit is created."
+            },
+            {
+                "GIVEN": "I navigate to the Announcements table",
+                "WHEN": "I look at the \u2018Forum\u2019 column",
+                "THEN": "Announcements title must include a hyperlink which will navigate me to the Announcements page itself."
+            },
+            {
+                "GIVEN": "I am viewing the Announcements table",
+                "WHEN": "I look at the 'Description' column.",
+                "THEN": "I should see the description for the Announcements forum displayed."
+            },
+            {
+                "GIVEN": "I am viewing the Announcements table",
+                "WHEN": "I look at the 'Discussions' column.",
+                "THEN": "I should see the number of discussions created for the Announcements forum."
+            },
+            {
+                "GIVEN": "I am viewing the Announcements table",
+                "WHEN": "I click on the number of discussions",
+                "THEN": "It will navigate me to the list of discussions on the corresponding announcements forum page."
+            },
+            {
+                "GIVEN": "I am viewing the Announcements table",
+                "WHEN": "I click on the number of discussions",
+                "THEN": "The number of discussions must include a hyperlink to the discussions on the corresponding announcements forum page."
+            },
+            {
+                "GIVEN": "I am viewing the Announcements table",
+                "WHEN": "I look at the 'Unread Posts' column.",
+                "THEN": "I should see the number of unread posts created for the Announcements forum"
+            },
+            {
+                "GIVEN": "I am viewing the Announcements table",
+                "WHEN": "I click on the number of unread posts",
+                "THEN": "It will navigate me to the discussion page of the individual announcements forum where the relevant posts live."
+            },
+            {
+                "GIVEN": "I am viewing the Announcements table",
+                "WHEN": "I click on the number of unread posts",
+                "THEN": "The number of unread posts must include a hyperlink to the discussion page of the individual announcement forum where the relevant posts live."
+            },
+            {
+                "GIVEN": "I am in edit or view mode and i navigate to Announcements table",
+                "WHEN": "I click on any of the fields",
+                "THEN": "I should not be able to edit this field."
+            },
+            {
+                "GIVEN": "I am in edit or view mode and i navigate to Announcements table",
+                "WHEN": "I click on any of the fields",
+                "THEN": "This is a read only field."
+            }
+        ]
+    },
+    {
+        "ID": "REQ-009",
+        "User Story": [
+            "As an academic, I want a Mass Action block to perform bulk Action/ activities only available in Learning section Tab and corresponding learning sections eg. Day 1, Day 2, Day 3. Restrict bulk actions / activities to other tabs.",
+            "I want following sections displayed and available to select from: Only Learning section tab and corresponding learning sections eg. Day 1, Day 2, Day 3."
+        ],
+        "User Story Extension": [
+            "Activities can only be moved within Learning section Tab specific between corresponding Learning sections (only to move activities within a tab).",
+            "Action cannot be moved between Tabs including Dashboard, Unit Information, Schedule, Assessments, and Forums."
+        ],
+        "Background Knowledge": [
+            "Currently, learning system only displays unit format with all learning sections as we do not have tabs currently. (see 2nd screenshots)",
+            "This was discovered during testing from [Internal Requirement Reference]"
+        ],
+        "Considering": [
+            "Roles for creating a new unit: VLE Administrator, Administrator, OES Administrator",
+            "Roles for Editing Unit: VLE Administrator, Administrator, OES Administrator, Lecturer, Designer, Chief Examiner"
+        ],
+        "acceptanceCriteria": [
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled, I am in a Learning section, then I am in Mass Actions block to perform actions",
+                "THEN": "I should then be able to see: LEARNING tab and corresponding learning sections eg. Day 1, Day 2, Day 3 displayed to select from in 'Select all in section' options."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled, I am in a Learning section, then I am in Mass Actions block to perform actions",
+                "THEN": "I should then be able to see: ASSESSMENTS tab."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled, I am in a Learning section, then I am in Mass Actions block to perform actions",
+                "THEN": "I should then be able to see: No other tabs should be displayed as options."
+            }
+        ]
+    },
+    {
+        "ID": "REQ-010",
+        "User Story": [
+            "As an academic, I want to be able to add Panopto lecture videos to Learning Journey sub-sections.",
+            "As an academic, I want to be able to add Panopto lecture videos as a resource to Learning Journey sub-sections (own-time, real-time, wrap-up)"
+        ],
+        "User Story Extension": [
+            "I must be able to add videos from Panopto library",
+            "Uploaded video must be embedded within the learning section allowing students to view the video directly within the section"
+        ],
+        "Background Knowledge": [],
+        "Considering": [
+            "Requires integrated Panopto functionality"
+        ],
+        "acceptanceCriteria": [
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to edit section, then I select 'Add an activity or a resource' > select a resource > file",
+                "THEN": "I should then be able to: Upload a Panopto video file to any of the Learning Journey sub-sections (own-time, real-time, wrap-up)."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to edit section, then I select 'Add an activity or a resource' > select a resource > file",
+                "THEN": "I should then be able to: When adding a resource, it will provide an option to select from 'Panopto' library."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to edit section, then I select 'Add an activity or a resource' > select a resource > file",
+                "THEN": "I should then be able to: Once video uploaded, video is embedded within the learning section allowing students to view the video directly within the section"
+            }
+        ]
+    },
+    {
+        "ID": "REQ-011",
+        "User Story": [
+            "As an academic, I want to be able to add four special sections in the Learning section eg. 'Getting started' so that I can present additional content for the unit."
+        ],
+        "User Story Extension": [
+            "Four special sections are defined as part of the template creation process and by default hidden from the students. Academic can unhide three sections at any time. Unhide functionality will be restricted for 'Staff resources' section.",
+            "Four section titles: Getting started, During the break, Additional information and resources, Staff resources",
+            "New learning sections titles configured and cannot be edited. Cannot delete sections. No ability to rename sections. Hidden by default. Academic can unhide all sections but 'Staff Resources'. I can move and rearrange and display this section before the regular numbered learning sections Week 1 - 12 or move it anywhere else before or after other sections."
+        ],
+        "Background Knowledge": [
+            "The functionality of the four special sections will be implemented across all future unit creations.",
+            "Option 1: O week and mid semester break sections are defined as part of the template creation process and by default hidden from the students. (Endorsed by Allie Clemans on 16th Aug)",
+            "Blank page (standard learning system page)",
+            "Academic is able to add text area, all activities and resources",
+            "The same rules apply for Schedule display",
+            "Schedule only populates if there is a date range and visible",
+            "If the current date does not fall within configured date, show Learning # 1 by default",
+            "Roles for creating a new unit: VLE Administrator, Administrator, OES Administrator",
+            "Roles for Editing Unit: VLE Administrator, Administrator, OES Administrator, Lecturer, Designer, Chief Examiner"
+        ],
+        "Considering": [
+            "[Internal Requirement Reference]"
+        ],
+        "acceptanceCriteria": [
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "A unit is created using the university Coursework template, I am in a Learning tab, and I am in edit mode",
+                "Then": "I should then be able to see: Four special sections which are defined as part of the template creation process and by default hidden and located before Week/topic 1 section (hidden from students): Getting started, During the break, Additional information and resources, Staff resources. Title to display in Sentence case."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I am in a Learning tab and I am in edit mode",
+                "Then": "I should have the option to 'show section' (unhide) and 'hide section' at any time for the following three special sections: Getting started, During the break, Additional information and resources"
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I am in a Learning tab and I am in edit mode",
+                "Then": "I should not have the ability to 'show section' (unhide) for the following sections: Staff resources. Restrict 'show section' (unhide) functionality for this section."
+            },
+            {
+                "Given": "I am in the Learning tab, and I am in edit mode",
+                "When": "I select to 'show section' (unhide)",
+                "Then": "Special section should be displayed before the regular numbered learning sections by default (eg. before Week 1-12, or Topic 1-12). If 'special section is 'unhidden', Learning drop down menu will update with the new section once the page is refreshed."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I navigate to Learning tab, and I am in edit mode, and I have selected to 'show section'",
+                "Then": "I can rearrange special section. If section is rearranged, the numbering for other sections should not change. Learning drop down menu will automatically update to reflect changes."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I navigate to any of the four special sections within the Learning tab",
+                "Then": "These sections will not have a prefix e.g. Week 1. There should only be a pre configured title."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I navigate to any of the four special sections within the Learning tab, and I am in edit mode",
+                "Then": "I should then be able to select a date range from a date picker, the date range will represent the start and end dates of the learning section. I must select start date and an end date (mandatory fields). End date cannot be before the start date"
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I navigate to any of the four special sections within the Learning tab, and I am in edit mode",
+                "Then": "I should see the section with a blank page format (standard learning system page) by default. There is no overview and no learning journey for these sections."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I navigate to any of the four sections within the Learning tab, and I am in edit mode",
+                "Then": "I should not be able to edit the title for the section."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I navigate to any of the four sections within the Learning tab, and I am in edit mode",
+                "Then": "I should be able to: Add an activity, Add a resource, Add a Bento box"
+            }
+        ]
+    },
+    {
+        "ID": "REQ-012",
+        "User Story": [
+            "As an academic, I want to be able to hide learning sections so that I can manage the release of learning content.",
+            "Students should not be able to identify hidden sections."
+        ],
+        "User Story Extension": [
+            "I can hide a learning section, example 'Week 1' from students for any of the following learning sections formats: Weekly Learning, Topic Learning, Module Learning, Daily sections",
+            "I can see an indicator that the week is hidden"
+        ],
+        "Background Knowledge": [],
+        "Considering": [
+            "Roles for creating a new unit: VLE Administrator, Administrator, OES Administrator",
+            "Roles for Editing Unit: VLE Administrator, Administrator, OES Administrator, Lecturer, Designer, Chief Examiner"
+        ],
+        "ACriteria": [
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I have editing enabled and I am in a Learning section, then I go to the learning section I want to hide",
+                "Then": "I should then be able to: I can hide a learning section > hide week, example 'Week 1' from students. (This applies for any of the following learning sections formats: Weekly Learning, Topic Learning, Module Learning, Daily Learning )  I can see an indicator that the week is hidden  Students should not be able to identify hidden sections. - to be tested in Phase 2 Hidden section will not display in the Learning section tab drop down menu for students."
+            }
+        ],
+        "acceptanceCriteria": [
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I go to the learning section I want to hide",
+                "THEN": "I should then be able to: I can hide a learning section > hide week, example 'Week 1' from students. (This applies for any of the following learning sections formats: Weekly Learning, Topic Learning, Module Learning, Daily Learning )"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I go to the learning section I want to hide",
+                "THEN": "I should then be able to: I can see an indicator that the week is hidden"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I go to the learning section I want to hide",
+                "THEN": "I should then be able to: Students should not be able to identify hidden sections. - to be tested in Phase 2"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I go to the learning section I want to hide",
+                "THEN": "I should then be able to: Hidden section will not display in the Learning section tab drop down menu for students."
+            }
+        ]
+    },
+    {
+        "ID": "REQ-013",
+        "User Story": [
+            "As an academic or a student, If the current date does not fall within the configured dates for the learning sections, the first learning section (Learning section # 1) will be shown by default",
+            "If the current date does not fall within the selected / entered date range for each week section, then the 1st learning section will be shown by default when Learning Section tab is selected."
+        ],
+        "User Story Extension": [],
+        "Background Knowledge": [],
+        "Considering": [
+            "Roles for creating a new unit: VLE Administrator, Administrator, OES Administrator",
+            "Roles for Editing Unit: VLE Administrator, Administrator, OES Administrator, Lecturer, Designer, Chief Examiner"
+        ],
+        "acceptanceCriteria": [
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation, course editing and course viewing",
+                "WHEN": "I create a new unit selecting university Coursework Template as the format, and am not in editing mode and I have not selected the date range for any of the LEARNING sections, then I click on LEARNING tab",
+                "THEN": "I should see the list of all sections. first learning section (eg. Week 1) by default"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course viewing",
+                "WHEN": "the date range for the LEARNING sections are set as past or future dates, and  I click on the LEARNING tab",
+                "THEN": "I should see the first learning section (eg. Week 1) by default"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation, course editing and course viewing",
+                "WHEN": "I am in edit mode",
+                "THEN": "I should see a list of all sections (weeks)."
+            }
+        ]
+    },
+    {
+        "ID": "REQ-014",
+        "User Story": [
+            "As an academic, I must be able to manually add text in the LEARNING Section Overview content area, so that I can provide essential information and learning objectives.",
+            "I can populate, edit and format text in the text content area within each learning sections"
+        ],
+        "User Story Extension": [
+            "This will be a rich text area enabling to add text and upload any type of file.",
+            "The widgets within the unit information tab are collapsible/expandable."
+        ],
+        "Background Knowledge": [
+            "Enabling Story: Defining the mod cms templates for each section/sub section that requires manual entry.",
+            "Roles for creating a new unit: VLE Administrator, Administrator, OES Administrator",
+            "Roles for Editing Unit: VLE Administrator, Administrator, OES Administrator, Lecturer, Designer, Chief Examiner"
+        ],
+        "Considering": [
+            "Custom content type plugin should be added to codebase and deployed to UAT",
+            "The customfield_picture plugin is installed",
+            "The customfield_file plugin is installed"
+        ],
+        "acceptanceCriteria": [
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to edit section",
+                "THEN": "I should then be able to: I can add, edit and format the text in the text content area within each Learning section"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to edit section",
+                "THEN": "I should then be able to: This will be a rich text area enabling to add text"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to edit section",
+                "THEN": "I should then be able to: This will be a rich text area enabling to upload any type of file"
+            }
+        ]
+    },
+    {
+        "ID": "REQ-015",
+        "User Story": [
+            "As an academic, I must be able to add corresponding activities including graded activities to the learning journey subsections, so that students clearly understand unit requirements.",
+            "As an academic, I must be able to add corresponding non graded activities including graded activities to the learning journey section, so that students clearly understand and complete unit content and requirements."
+        ],
+        "User Story Extension": [
+            "Restrict adding graded activities to learning section.",
+            "As an academic, I must be able to add forums to the Learning Journey section, so that students can access and participate in forum discussions."
+        ],
+        "Background Knowledge": [
+            "Activities may include but not limited to (assignment, unit based forums, lesson, tutorial, quizzes, workshop, zoom link etc)",
+            "(Forum name and forum link to be included) (defaults learning system functionality)"
+        ],
+        "Considering": [
+            "This story is QA to test current learning system functionality."
+        ],
+        "acceptanceCriteria": [
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I have editing enabled and I am in a Learning section, then I select to 'Add an activity to any of the Learning journey subsections, then I select Activities'",
+                "Then": "I should then be able to: Add an activity to any of the following Learning Journey subsections: Own-time, Real-time, Wrap Up. Activities may include but not limited to (assignment, unit based forums, lesson, tutorial, quizzes, workshop, zoom link etc). Added activity will be displayed within the respective learning journey sub-sections (own-time, real-time, wrap-up)."
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I have editing enabled and I am in a Learning section, then I add an activity to any of the Learning journey subsections and click to display",
+                "Then": "I should then be able to see details relevant to each activity added and displayed in the respective learning journey sub-sections (own-time, real-time, wrap-up). Example of the details displayed: - Name of the activity - Description - File size (if applicable) - File type (if applicable) - 'Due' date (if applicable) - Mark as done (if applicable) - Link to access/ download a file (if applicable)"
+            },
+            {
+                "Given": "I am logged in as a user with a role that allows course creation or course editing",
+                "When": "I have editing enabled and I am in a Learning section, then I select to 'Add an activity or a resource', then I select Activities",
+                "Then": "I should then be able to: Add a forum activity to any of the following Learning Journey subsections: Own-time, Real-time, Wrap Up. Added forum activity will be displayed within the respective learning journey sub-sections (own-time, real-time, wrap-up) as a Forum name and the link to the forum."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to 'Add an activity or a resource', then I select Activities, and I select a graded activity (any activity where I can select a grade type)",
+                "THEN": "The grade type should be set to 'none' and disabled for editing"
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to 'Add an activity or a resource', then I select Activities, and I select a graded activity (any activity where I can select a grade type)",
+                "THEN": "I should not be able to set grade type to scale or point (value)"
+            }
+        ],
+    },
+    {
+        "ID": "REQ-016",
+        "User Story": [
+            "As an academic, I must be able to upload a banner, an image or a video as part of the learning section overview content so that I can provide visual content to further enhance student learning"
+        ],
+        "User Story Extension": [
+            "I can select to upload a banner or image",
+            "I can upload a video file",
+            "Uploaded video must be embedded within the learning section allowing students to view directly within the section",
+            "If no video/ image uploaded, the overview content will adjust accordingly to accommodate text only content."
+        ],
+        "Background Knowledge": [
+            "This will be a rich text and media area allowing to add text and upload an image and video files."
+        ],
+        "Considering": [],
+        "acceptanceCriteria": [
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to edit section",
+                "THEN": "I should then be able to: Upload a banner or an image file. This will be a rich text area allowing to add text and upload an image file (jpeg, png file formats). -any type of file."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to edit section",
+                "THEN": "Upload a video file. This will be a rich text area allowing to add text and upload a video file (mp4 and avi file format). {-}any type of file{-}."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to edit section",
+                "THEN": "Once video uploaded, video is embedded."
+            },
+            {
+                "GIVEN": "I am logged in as a user with a role that allows course creation or course editing",
+                "WHEN": "I have editing enabled and I am in a Learning section, then I select to edit section",
+                "THEN": "If no video or image is uploaded, the overview content area will adjust accordingly to fit text only."
+            }
+        ],
+    }
