@@ -8,6 +8,9 @@ ROOT
 - RAG: visual and textual RAG methods
 - reward_models: global and local reward models
 - apis: the LLMs' api, prompt construction
+- Testset: The anonymized testset from the project
+  	- Screenshots are the UI/UX designs
+  	- anonymized_esolutions are the user story and acceptance testing data
 
 **Excecuting Configuration**
 
