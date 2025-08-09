@@ -8,6 +8,26 @@ from json import JSONDecoder
 
 
 # URL of the directory (ensure it ends with a slash)
+def load_acceptance_criteria(file_path):
+    acs = []
+    uss = []
+    use = []
+    ids = []
+    bg1 = []
+    bg2 = []
+    img = []
+    with open(file_path, "r") as f:
+        generated_acs = json.load(f)
+    for single_data in generated_acs:
+        acs.append(single_data["acceptanceCriteria"])
+        uss.append(single_data["User_Story"])
+        use.append(single_data["US_Description"])
+        ids.append(single_data["Ground_ID"])
+        bg1.append(single_data["BG"])
+        bg2.append(single_data["Con"])
+        img.append(single_data["Images"])
+
+    return uss, uss, acs, ids, bg1, bg2, img
 
 def clean_response(response):
     try:
